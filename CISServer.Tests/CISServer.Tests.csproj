@@ -40,6 +40,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -94,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceProviderTest.cs" />
+    <Compile Include="ProviderServiceTest.cs" />
+    <Compile Include="AuthentificationProviderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -105,6 +109,10 @@
     <ProjectReference Include="..\CISServer\CISServer.csproj">
       <Project>{122A04F6-ED91-4822-A12C-AF62033178D0}</Project>
       <Name>CISServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libcis\libcis.csproj">
+      <Project>{c65ed599-4257-4e90-a156-effd1749626d}</Project>
+      <Name>libcis</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
