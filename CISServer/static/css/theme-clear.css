@@ -1,4 +1,8 @@
-﻿body {
+﻿/*
+Bootstrap theme (not very much to add though)    
+*/
+
+body {
 
 }
 
@@ -12,6 +16,14 @@
 [class*="span"] {
   margin-left: 10px !important;
 }
+
+.pending-services
+{
+}
+    .pending-services.hidden
+    {
+        display: none;
+    }
 
 .row
 {
@@ -97,8 +109,6 @@ h3
     -o-transition-property: left, opacity;
     -o-transition-duration: 0.6s;
     -o-transition-timing-function: ease-in-out;
-
-
 }
 
 .table
@@ -139,4 +149,9 @@ h3
     padding-top: 5px !important;
     padding-bottom: 3px !important;
     margin: 10px !important;
+}
+
+.btn.btn-link.btn-large.btn-block.hidden
+{
+    display: none;
 }

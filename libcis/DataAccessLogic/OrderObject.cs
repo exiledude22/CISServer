@@ -6,16 +6,60 @@ using System.Threading.Tasks;
 
 namespace libcis.DataAccessLogic
 {
+    /// <summary>
+    /// Represents a pair of service ids and quantity.
+    /// </summary>
     public struct ServiceIdQuantityPair 
     {
-        public int ServiceId { get; set; }
-        public int Quantity { get; set; }
+        /// <summary>
+        /// The id of the service.
+        /// </summary>
+        public int ServiceId 
+        { 
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The quantity of the service.
+        /// </summary>
+        public int Quantity 
+        { 
+            get;
+            set; 
+        }
     }
 
+    /// <summary>
+    /// Represents an order object aggregate.
+    /// </summary>
     public class OrderObject
     {
-        public int OrderId { get; set; }
-        public int ProviderHotspotId { get; set; }
-        public IList<ServiceIdQuantityPair> OrderContents { get; set; }
+        /// <summary>
+        /// The id of the order.
+        /// </summary>
+        public int OrderId
+        { 
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The hotspot.
+        /// </summary>
+        public int ProviderHotspotId 
+        { 
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// A list of Service/Quanitiy pair objects associated with the order/hotspot.
+        /// </summary>
+        public IList<ServiceIdQuantityPair> OrderContents 
+        { 
+            get;
+            set;
+        }
     }
 }

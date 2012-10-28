@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿// If this was a library it would be called 'The incredible mess'
+// Prototype hack-style jquery script used to test the feel of the user interface.
+$(document).ready(function () {
     var refresh_interval = 1000;
     $(".hotspot").click(function () {
         console.log("hotspot clicked");
@@ -9,9 +11,14 @@
         }, 400);
     });
 
+    $("#show-more-button").click(function () {
+        $(this).addClass("hidden");
+        $.each($(".pending-services"), function () {
+            $(this).removeClass("hidden");
+        });
+    });
+
     $(".service-container").click(function () {
-
-
         var hotspot_id = $(this).attr("hotspot-id");
         var service_id = $(this).attr("service-id");
         var service_container = $(this);
@@ -32,6 +39,7 @@
                             service_container.css("opacity", "0");
                             setTimeout(function () {
                                 $(service_container).remove();
+                                // TODO: merge
                             }, 300);
                         }, 600);
                         return false;

@@ -49,6 +49,7 @@
     <Compile Include="DataAccessLogic\ActiveProviderHotspotsResult.cs" />
     <Compile Include="DataAccessLogic\CheckoutResult.cs" />
     <Compile Include="DataAccessLogic\IProviderService.cs" />
+    <Compile Include="DataAccessLogic\MarkAsViewedResult.cs" />
     <Compile Include="DataAccessLogic\MarkForCheckoutResult.cs" />
     <Compile Include="DataAccessLogic\IAuthenticationProvider.cs" />
     <Compile Include="DataAccessLogic\IFavoritesProvider.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="DataAccessLogic\IStatisticsProvider.cs" />
     <Compile Include="DataAccessLogic\ISuggestionsProvider.cs" />
     <Compile Include="DataAccessLogic\OrderObject.cs" />
+    <Compile Include="DataAccessLogic\ServiceObject.cs" />
     <Compile Include="Models\CISDatabaseEntitites.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

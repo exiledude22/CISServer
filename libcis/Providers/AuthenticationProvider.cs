@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace libcis.Providers
 {
+    /// <summary>
+    /// <see cref="IAuthenticationProvider"/> for details.
+    /// </summary>
     public class AuthenticationProvider : libcis.DataAccessLogic.IAuthenticationProvider
     {
         public libcis.DataAccessLogic.AuthenticationResult Get(int marker_id)

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace libcis.Providers
 {
+    /// <summary>
+    /// <see cref="IServiceProvider"/> for details.
+    /// </summary>
     public class ServiceProvider : libcis.DataAccessLogic.IServiceProvider
     {
         public IList<Models.Service> Get(int provider_id)
@@ -56,21 +59,14 @@ namespace libcis.Providers
             libcis.DataAccessLogic.CheckoutResult checkout_result = new DataAccessLogic.CheckoutResult();
             
             var context = new libcis.Models.CISDatabaseEntities();
-
-            //Get ProviderHotspotId
             var hotspot_result = from hotspots in context.Orders
                                  where hotspots.Id == order_id
                                  select hotspots.ProviderHotspotId;
             var hotspot_id = hotspot_result.First();
-
-            //Get ProviderId
             var provider_result = from data in context.ProviderHotspots
                                   where data.Id == hotspot_id
                                   select data.ProviderId;
             var provider_id = provider_result.First();
-
-
-            //Get all orders with recieved order_id
             var result = from orders in context.OrderContents
                          where orders.OrderId == order_id
                          select orders;
@@ -78,13 +74,11 @@ namespace libcis.Providers
 
             foreach (var current_order in checkout_orders)
             {
-                //Gets current service name
                 var service_name_result = from services in context.Services
                                           where services.Id == current_order.ServiceId
                                           select services.Name;
                 string service_name = service_name_result.First();
 
-                //Creates lew log and fills it
                 var new_log = new libcis.Models.Log();
                 new_log.ServiceId = current_order.ServiceId;
                 new_log.ProviderHotspotId = hotspot_id;
@@ -128,6 +122,7 @@ namespace libcis.Providers
             context.Dispose();
         }
 
+        #region Unimplemented
         public void Update()
         {
         }
@@ -151,5 +146,6 @@ namespace libcis.Providers
         public void Special()
         {
         }
+        #endregion
     }
 }

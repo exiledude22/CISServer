@@ -13,13 +13,15 @@ namespace CISServer
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //the only non-api route where the management panels are found
+            //IE: cis-cloud.azurewebsites.net/manage/3
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "manage/{id}",
                 defaults: new
                 {
-                    controller = "Home",
-                    action = "Index",
+                    controller = "ServiceCenter",
+                    action = "ManagementPanel",
                     id = UrlParameter.Optional
                 }
             );

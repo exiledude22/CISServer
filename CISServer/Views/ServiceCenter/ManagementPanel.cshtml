@@ -1,5 +1,5 @@
 ﻿@model CISServer.Controllers.ViewModel
-
+<!---Razor is huge mess, fuck razor--->
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -29,32 +29,47 @@
     <div class="span12 hero-unit">
         <div class="span4 pull-left">
             <div class="row">
-
                 <table class="table table-hover">
                     <tr>
                         <th colspan="3">
-                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-refresh"></i>Show more (3)</a>
+                            <a id="show-more-button" class="btn btn-link btn-large btn-block"><i class="icon-refresh"></i>Show more (@Model.PendingServicesCount)</a>
                         </th>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="service-container" service-id="7" hotspot-id="4">
-                                <img class="img-polaroid" src="http://175proof.com/wp-content/uploads/2010/10/Heineken-Tactile-Can-Front.jpg" style="display: inline; width: 48px; height: 48px" />
-                                <span class="service-data"><small>31x Heineken</small></span>
-                                <span class="service-data"><b>Masa 3</b></span>
-                            </div>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>Masa 3</b></span>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>Masa 14</b></span>
-                        </td>
-                    </tr>
+                    @{
+                var limiter = 0;
+                foreach(var pending_service in Model.PendingServices)
+                {
+                    {
+                        if(limiter == 0)
+                        {
+                            @Html.Raw("<tr class='pending-services hidden'>");
+                        }
+                    }
+                            <td>
+                                <div class="service-container" hotspot-id="@pending_service.HotSpotId" service-id="@pending_service.ServiceId">
+                                    <img class="img-polaroid" src="http://175proof.com/wp-content/uploads/2010/10/Heineken-Tactile-Can-Front.jpg" style="display: inline; width: 48px; height: 48px" />
+                                    <span class="service-data"><small>@string.Format("{0}x", pending_service.Quantity) @pending_service.ServiceName</small></span>
+                                    <span class="service-data"><b>@string.Format("{0}$", pending_service.Quantity)</b></span>
+                                </div>
+                            </td>
+                    {
+                        if((limiter == 2))
+                        {
+                            limiter = -1;
+                            @Html.Raw("</tr>");
+                        }
+                    }
+                    limiter++;
+                }
+                        for(int i = limiter; i < 3; i++)
+                {
+                     @Html.Raw("<td></td>");
+                                           if(i == 2)
+                     {
+                          @Html.Raw("</tr>");
+                     }
+                }
+            }
                 </table>
 
             </div>
@@ -66,7 +81,7 @@
                     <table class="table table-hover">
                         <tr>
                             <th colspan="3">
-                                <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i>hotspot_@active_hotspot.ProviderHotspotId (44400$) <i class="icon-plus"></i></a>
+                                <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i>hotspot_@active_hotspot.ProviderHotspotId (@string.Format("{0}$",active_hotspot.TotalCost)) <i class="icon-plus"></i></a>
                             </th>
                         </tr>
                         @{
@@ -110,7 +125,7 @@
         </div>
         <div class="span4 pull-left">
             <div class="row hotspot">
-
+                <!---A static UI prototype with more pictures--->
                 <table class="table table-hover">
                     <tr>
                         <th colspan="3">

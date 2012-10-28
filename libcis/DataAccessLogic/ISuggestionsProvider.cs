@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace libcis.DataAccessLogic
 {
+    /// <summary>
+    /// Unimplemented.
+    /// </summary>
     public interface ISuggestionsProvider
     {
         void Get();

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace libcis.Providers
 {
+    /// <summary>
+    /// <see cref="IProviderService"/> for details.
+    /// </summary>
     public class ProviderService : libcis.DataAccessLogic.IProviderService
     {   
         public DataAccessLogic.ActiveProviderHotspotsResult GetActiveProviderHotspots(int provider_id)
@@ -16,7 +19,6 @@ namespace libcis.Providers
                                          where hotspots.ProviderId == provider_id
                                          select hotspots;
             var active_hotspots = active_hotspots_result.ToList();
-            
             foreach (var hotspot in active_hotspots)
             {
                 float total_hotspot_cost = 0;
