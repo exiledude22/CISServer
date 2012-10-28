@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace libcis.DataAccessLogic
 {
-    public class AuthenticationResult
+    public class CheckoutResult
     {
         public bool Success
         {
@@ -15,24 +15,6 @@ namespace libcis.DataAccessLogic
         }
 
         public string ErrorMessage
-        {
-            get;
-            set;
-        }
-
-        public int ProviderId
-        {
-            get;
-            set;
-        }
-
-        public int HotspotId
-        {
-            get;
-            set;
-        }
-
-        public int OrderId
         {
             get;
             set;

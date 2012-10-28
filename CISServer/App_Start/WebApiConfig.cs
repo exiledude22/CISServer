@@ -18,16 +18,45 @@ namespace CISServer
                     marker_id = RouteParameter.Optional
                 }
                 );
+
+            config.Routes.MapHttpRoute(
+                name: "iasdf",
+                routeTemplate: "api/services/{action}",
+                defaults: new
+                {
+                    controller = "services"
+                }
+                );
+            
             config.Routes.MapHttpRoute(
                 name: "iiiio",
                 routeTemplate: "api/services/{action}/{provider_id}",
                 defaults: new
                 {
                     controller = "services",
-                    marker_id = RouteParameter.Optional
+                    provider_id = RouteParameter.Optional
                 }
                 );
-
+            config.Routes.MapHttpRoute(
+    name: "sdfagfsagfa",
+    routeTemplate: "api/provider/{action}/{provider_id}",
+    defaults: new
+    {
+        controller = "provider",
+        provider_id = RouteParameter.Optional
+    }
+    );
+            /*
+            config.Routes.MapHttpRoute(
+               name: "orderss",
+               routeTemplate: "api/services/{action}",
+               defaults: new
+               {
+                   controller = "services",
+                   marker_id = RouteParameter.Optional
+               }
+               );
+            */
         }
     }
 }

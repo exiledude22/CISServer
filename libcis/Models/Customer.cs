@@ -12,10 +12,10 @@ namespace libcis.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Customer
     {
         public int Id { get; set; }
-        public int ProviderHotspotId { get; set; }
-        public Nullable<byte> MarkedForChekout { get; set; }
+        public byte[] MobileData { get; set; }
+        public string Data { get; set; }
     }
 }

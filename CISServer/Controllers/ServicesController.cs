@@ -33,12 +33,25 @@ namespace CISServer.Controllers
             return Provider.Get(provider_id);
         }
 
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [ActionName("order")]
+        public void Order([FromBody]libcis.DataAccessLogic.OrderObject orders)
         {
+            Provider.Order(orders);
         }
-
-        public void Put(int id, [FromBody]string value)
+                
+        [HttpPost]
+        [ActionName("checkout")]
+        public libcis.DataAccessLogic.CheckoutResult Checkout([FromBody]int order_id)
         {
+            return Provider.Checkout(order_id);
+        } 
+
+        [HttpPost]
+        [ActionName("checkout")]
+       
+        public void Put(int id, [FromBody]string value)
+        {            
         }
 
         public void Delete(int id)

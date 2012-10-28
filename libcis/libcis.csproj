@@ -46,62 +46,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLogic\ActiveProviderHotspotsResult.cs" />
+    <Compile Include="DataAccessLogic\CheckoutResult.cs" />
+    <Compile Include="DataAccessLogic\IProviderService.cs" />
+    <Compile Include="DataAccessLogic\MarkForCheckoutResult.cs" />
     <Compile Include="DataAccessLogic\IAuthenticationProvider.cs" />
     <Compile Include="DataAccessLogic\IFavoritesProvider.cs" />
     <Compile Include="DataAccessLogic\IProviderHost.cs" />
     <Compile Include="DataAccessLogic\IServiceProvider.cs" />
     <Compile Include="DataAccessLogic\IStatisticsProvider.cs" />
     <Compile Include="DataAccessLogic\ISuggestionsProvider.cs" />
-    <Compile Include="Models\CISDatabaseEntities.Context.cs">
+    <Compile Include="DataAccessLogic\OrderObject.cs" />
+    <Compile Include="Models\CISDatabaseEntitites.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CISDatabaseEntities.Context.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CISDatabaseEntities.cs">
+    <Compile Include="Models\CISDatabaseEntitites.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CISDatabaseEntities.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CISDatabaseEntities.Designer.cs">
+    <Compile Include="Models\CISDatabaseEntitites.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CISDatabaseEntities.edmx</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log.cs">
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>CISDatabaseEntities.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderContent.cs">
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Provider.cs">
-      <DependentUpon>CISDatabaseEntities.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProviderHotspot.cs">
-      <DependentUpon>CISDatabaseEntities.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Service.cs">
-      <DependentUpon>CISDatabaseEntities.tt</DependentUpon>
+      <DependentUpon>CISDatabaseEntitites.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\AuthenticationProvider.cs" />
     <Compile Include="DataAccessLogic\AuthenticationResult.cs" />
+    <Compile Include="Providers\ProviderService.cs" />
     <Compile Include="Providers\ServiceProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <EntityDeploy Include="Models\CISDatabaseEntities.edmx">
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Models\CISDatabaseEntitites.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CISDatabaseEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>CISDatabaseEntitites.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\CISDatabaseEntities.Context.tt">
+    <None Include="Models\CISDatabaseEntitites.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CISDatabaseEntities.edmx</DependentUpon>
-      <LastGenOutput>CISDatabaseEntities.Context.cs</LastGenOutput>
+      <DependentUpon>CISDatabaseEntitites.edmx</DependentUpon>
+      <LastGenOutput>CISDatabaseEntitites.Context.cs</LastGenOutput>
     </None>
-    <None Include="Models\CISDatabaseEntities.edmx.diagram">
-      <DependentUpon>CISDatabaseEntities.edmx</DependentUpon>
+    <None Include="Models\CISDatabaseEntitites.edmx.diagram">
+      <DependentUpon>CISDatabaseEntitites.edmx</DependentUpon>
     </None>
-    <None Include="Models\CISDatabaseEntities.tt">
+    <None Include="Models\CISDatabaseEntitites.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CISDatabaseEntities.edmx</DependentUpon>
-      <LastGenOutput>CISDatabaseEntities.cs</LastGenOutput>
+      <DependentUpon>CISDatabaseEntitites.edmx</DependentUpon>
+      <LastGenOutput>CISDatabaseEntitites.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

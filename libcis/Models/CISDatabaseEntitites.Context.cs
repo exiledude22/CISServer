@@ -25,7 +25,10 @@ namespace libcis.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Log> Logs { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderContent> OrderContents { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<ProviderHotspot> ProviderHotspots { get; set; }
         public DbSet<Service> Services { get; set; }

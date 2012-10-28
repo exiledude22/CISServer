@@ -25,6 +25,11 @@ namespace libcis.Providers
             else
             {
                 var hotspot = provider_hotspot.First();
+                libcis.Models.Order customer_order = new libcis.Models.Order();
+                customer_order.ProviderHotspotId = hotspot.Id;
+                context.Orders.Add(customer_order);
+                context.SaveChanges();
+                return_message.OrderId = customer_order.Id;                
                 return_message.Success = true;
                 return_message.ProviderId = hotspot.ProviderId;
                 return_message.HotspotId = hotspot.Id;

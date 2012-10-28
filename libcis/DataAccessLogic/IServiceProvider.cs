@@ -10,12 +10,13 @@ namespace libcis.DataAccessLogic
     public interface IServiceProvider
     {
         IList<Service> Get(int provider_id);
-        void Checkout();
-        void Order();
+        CheckoutResult Checkout(int order_id);
+        void Order(OrderObject orders);
         void Update();
         void Details();
         void Delete();
         void Lock();
+        MarkForCheckoutResult MarkForCheckout(int order_id);
 
         void Cancel();
         void Special();
