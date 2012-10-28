@@ -1,8 +1,10 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
+﻿@model CISServer.Controllers.ViewModel
+
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a class="brand" href="#"><i class="icon-th icon-white"
-                style="margin-top: 5px;"></i> CIS ADMIN PANEL</a>
+                style="margin-top: 5px;"></i>CIS ADMIN PANEL</a>
             <ul class="nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Sweet</a></li>
@@ -31,7 +33,7 @@
                 <table class="table table-hover">
                     <tr>
                         <th colspan="3">
-                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-refresh"></i> Show more (3)</a>
+                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-refresh"></i>Show more (3)</a>
                         </th>
                     </tr>
                     <tr>
@@ -58,62 +60,53 @@
             </div>
         </div>
         <div class="span4 pull-left">
-            <div class="row hotspot" hotspot-id="4">
-                <table class="table table-hover">
-                    <tr>
-                        <th colspan="3">
-                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i> Masa 5 (44400$) <i class="icon-plus"></i></a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="static-service-container" service-id="7">
-                                <img class="img-polaroid" src="http://175proof.com/wp-content/uploads/2010/10/Heineken-Tactile-Can-Front.jpg" style="display: inline; width: 48px; height: 48px" />
-                                <span class="service-data"><small>31x Heineken</small></span>
-                                <span class="service-data"><b>123$</b></span>
-                            </div>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>44$</b></span>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>44$</b></span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="row hotspot">
-                <table class="table table-hover">
-                    <tr>
-                        <th colspan="3">
-                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i> Masa 5 (44400$) <i class="icon-plus"></i></a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="static-service-container" service-id="7">
-                                <img class="img-polaroid" src="http://175proof.com/wp-content/uploads/2010/10/Heineken-Tactile-Can-Front.jpg" style="display: inline; width: 48px; height: 48px" />
-                                <span class="service-data"><small>31x Heineken</small></span>
-                                <span class="service-data"><b>123$</b></span>
-                            </div>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>44$</b></span>
-                        </td>
-                        <td>
-                            <img class="img-polaroid" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" style="width: 48px; height: 48px" />
-                            <span class="service-data"><small>3x Gogosi</small></span>
-                            <span class="service-data"><b>44$</b></span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            @foreach(var active_hotspot in Model.ActiveHotspots.ActiveProviderHotspotsAndOrderItems)
+            {
+                <div class="row hotspot" hotspot-id="@active_hotspot.ProviderHotspotId">
+                    <table class="table table-hover">
+                        <tr>
+                            <th colspan="3">
+                                <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i>hotspot_@active_hotspot.ProviderHotspotId (44400$) <i class="icon-plus"></i></a>
+                            </th>
+                        </tr>
+                        @{
+                var iter = 0;
+                foreach(var service in active_hotspot.OrderItems)
+                {
+                    {
+                        if(iter == 0)
+                        {
+                            @Html.Raw("<tr>");
+                        }
+                    }
+                            <td>
+                                <div class="static-service-container" service-id="@service.ServiceId">
+                                    <img class="img-polaroid" src="http://175proof.com/wp-content/uploads/2010/10/Heineken-Tactile-Can-Front.jpg" style="display: inline; width: 48px; height: 48px" />
+                                    <span class="service-data"><small>@string.Format("{0}x", service.Quantity) @service.Name</small></span>
+                                    <span class="service-data"><b>@string.Format("{0}$", service.Price)</b></span>
+                                </div>
+                            </td>
+                    {
+                        if((iter == 2))
+                        {
+                            iter = -1;
+                            @Html.Raw("</tr>");
+                        }
+                    }
+                    iter++;
+                }
+                for(int i = iter; i < 3; i++)
+                {
+                     @Html.Raw("<td></td>");
+                                           if(i == 2)
+                     {
+                          @Html.Raw("</tr>");
+                     }
+                }
+            }
+                    </table>
+                </div>
+            }
         </div>
         <div class="span4 pull-left">
             <div class="row hotspot">
@@ -121,7 +114,7 @@
                 <table class="table table-hover">
                     <tr>
                         <th colspan="3">
-                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i> Masa 5 (44400$) <i class="icon-plus"></i></a>
+                            <a class="btn btn-link btn-large btn-block" id="start-button"><i class="icon-tag"></i>Masa 5 (44400$) <i class="icon-plus"></i></a>
                         </th>
                     </tr>
                     <tr>
