@@ -1,0 +1,142 @@
+﻿body {
+
+}
+
+.hero-unit
+{
+    margin-top: 45px !important;
+    padding: 5px !important;
+    background-color: #f3f3f3;
+}
+
+[class*="span"] {
+  margin-left: 10px !important;
+}
+
+.row
+{
+    margin-left: 0;
+}
+
+.hero-unit.main
+{
+    margin-top: 0px !important;
+    padding: 0px !important;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.btn-block
+{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80% !important;
+    margin-top: 10px;
+
+}
+
+h3
+{
+    font-size: 16px;
+    margin: 0px;
+    margin-left: 5px;
+    color: #08C;
+}
+
+.disabled
+{
+    font-size: 11px;
+}
+
+.hotspot
+{
+    transition-property: margin-left;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    -moz-transition-property: margin-left;
+    -moz-transition-duration: 0.4s;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-property: margin-left;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-property: margin-left;
+    -o-transition-duration: 0.4s;
+    -o-transition-timing-function: ease-in;
+}
+
+.service-container.anim
+{
+    transition-property: top;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
+
+    -moz-transition-property: top;
+    -moz-transition-duration: 0.6s;
+    -moz-transition-timing-function: ease-in-out;
+
+    -webkit-transition-property: top;
+    -webkit-transition-duration: 0.6s;
+    -webkit-transition-timing-function: ease-in-out;
+
+    -o-transition-property: top;
+    -o-transition-duration: 0.6s;
+    -o-transition-timing-function: ease-in-out;
+
+    transition-property: left, opacity;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
+
+    -moz-transition-property: left, opacity;
+    -moz-transition-duration: 0.6s;
+    -moz-transition-timing-function: ease-in-out;
+
+    -webkit-transition-property: left, opacity;
+    -webkit-transition-duration: 0.6s;
+    -webkit-transition-timing-function: ease-in-out;
+
+    -o-transition-property: left, opacity;
+    -o-transition-duration: 0.6s;
+    -o-transition-timing-function: ease-in-out;
+
+
+}
+
+.table
+{
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.alert
+{
+    margin-bottom: 0px !important;
+}
+.table tr td
+{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.service-data
+{
+    display: block;
+}
+
+.table tr th
+{
+    vertical-align: middle;
+}
+
+.alert.alert-info
+{
+    background-color: #fff;
+}
+
+.hero-unit.hotspot
+{
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 0 !important;
+    padding-top: 5px !important;
+    padding-bottom: 3px !important;
+    margin: 10px !important;
+}
