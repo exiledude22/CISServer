@@ -13,7 +13,7 @@ The current prototype uses a mobile phone to identify specific service provider 
 (such as QRT markers), called hotspots. By scanning this marker he can get access to a new
 way to interact with the services available at those hotspots.
 
-For example imagine that you go to a hotel and a marker is place somewhere in the room, by scanning
+For example imagine that you go to a hotel and a marker is placed somewhere in the room, by scanning
 that marker you can access room-service and other services straight from your phone. The same principle
 can apply to many other situations such as bars, restaurants, karaoke etc.
 
