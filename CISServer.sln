@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISServer", "CISServer\CISServer.csproj", "{122A04F6-ED91-4822-A12C-AF62033178D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CISServer.Tests", "CISServer.Tests\CISServer.Tests.csproj", "{CEA710CE-3C33-403D-AA51-C7B9C452357D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libcis", "libcis\libcis.csproj", "{C65ED599-4257-4E90-A156-EFFD1749626D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{122A04F6-ED91-4822-A12C-AF62033178D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122A04F6-ED91-4822-A12C-AF62033178D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122A04F6-ED91-4822-A12C-AF62033178D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122A04F6-ED91-4822-A12C-AF62033178D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA710CE-3C33-403D-AA51-C7B9C452357D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA710CE-3C33-403D-AA51-C7B9C452357D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA710CE-3C33-403D-AA51-C7B9C452357D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA710CE-3C33-403D-AA51-C7B9C452357D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65ED599-4257-4E90-A156-EFFD1749626D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65ED599-4257-4E90-A156-EFFD1749626D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65ED599-4257-4E90-A156-EFFD1749626D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65ED599-4257-4E90-A156-EFFD1749626D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
