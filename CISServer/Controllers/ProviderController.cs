@@ -38,10 +38,11 @@ namespace CISServer.Controllers
             return Provider.GetPendingProviderHotspots(provider_id);
         }
 
-        // GET api/provider/5
-        public string Get(int id)
+        [HttpGet]
+        [ActionName("pending_services")]
+        public IList<libcis.DataAccessLogic.ServiceObject> GetPendingServices(int provider_id)
         {
-            return "value";
+            return Provider.GetPendingServices(provider_id);
         }
 
         // POST api/provider

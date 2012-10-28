@@ -17,7 +17,7 @@ namespace libcis.DataAccessLogic
         void Delete();
         void Lock();
         MarkForCheckoutResult MarkForCheckout(int order_id);
-
+        MarkAsViewedResult MarkAsViewed(IList<int> order_content_ids);
 
         void Cancel();
         void Special();

@@ -11,5 +11,6 @@ namespace libcis.DataAccessLogic
     {
         ActiveProviderHotspotsResult GetActiveProviderHotspots(int provider_id);
         IList<int> GetPendingProviderHotspots(int provider_id);
+        IList<ServiceObject> GetPendingServices(int provider_id);
     }
 }

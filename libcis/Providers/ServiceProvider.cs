@@ -19,6 +19,23 @@ namespace libcis.Providers
             return all_services;
         }
 
+        public libcis.DataAccessLogic.MarkAsViewedResult MarkAsViewed(IList<int> order_content_ids)
+        {
+            libcis.DataAccessLogic.MarkAsViewedResult viewed_result = new DataAccessLogic.MarkAsViewedResult();
+            var context = new libcis.Models.CISDatabaseEntities();
+            foreach(var order_content_id in order_content_ids)
+            {
+                var result = from contents in context.OrderContents
+                             where contents.Id == order_content_id
+                             select contents;
+                var current_order_content = result.First();
+                current_order_content.Viewed = 1;
+            }
+            context.SaveChanges();
+            viewed_result.Success = true;
+            return viewed_result;
+        }
+
         public libcis.DataAccessLogic.MarkForCheckoutResult MarkForCheckout(int order_id)
         {
             libcis.DataAccessLogic.MarkForCheckoutResult checkout_result = new DataAccessLogic.MarkForCheckoutResult();

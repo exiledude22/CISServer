@@ -34,6 +34,13 @@ namespace CISServer.Controllers
         }
 
         [HttpPost]
+        [ActionName("mark_as_viewed")]
+        public libcis.DataAccessLogic.MarkAsViewedResult MarkAsViewed(IList<int> order_content_ids)
+        {
+            return Provider.MarkAsViewed(order_content_ids);
+        }
+
+        [HttpPost]
         [ActionName("order")]
         public void Order([FromBody]libcis.DataAccessLogic.OrderObject orders)
         {

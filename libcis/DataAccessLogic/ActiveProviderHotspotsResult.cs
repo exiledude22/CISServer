@@ -40,6 +40,12 @@ namespace libcis.DataAccessLogic
             OrderItems = new List<OrderItem>();
         }
 
+        public float TotalCost
+        {
+            get;
+            set;
+        }
+
         public int ProviderHotspotId
         {
             get;

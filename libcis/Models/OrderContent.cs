@@ -20,5 +20,6 @@ namespace libcis.Models
         public int Quantity { get; set; }
         public Nullable<System.DateTime> Time { get; set; }
         public int CustomerId { get; set; }
+        public short Viewed { get; set; }
     }
 }

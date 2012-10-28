@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace libcis.DataAccessLogic
 {
-    class MarkAsViewedResult
+    public class MarkAsViewedResult
     {
         public bool Success
         {
